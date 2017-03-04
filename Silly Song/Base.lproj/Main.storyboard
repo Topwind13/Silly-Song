@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Silly_Song" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gCO-jE-9h0">
+                                <rect key="frame" x="50" y="222" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="displayLyrics:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="wTZ-UP-8so"/>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="3CD-YK-yka"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ItP-1d-6yW">
+                                <rect key="frame" x="50" y="285" width="275" height="296"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="Yud-hP-HPe"/>
+                                    <constraint firstAttribute="height" constant="296" id="icE-Fc-vm1"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.15055670966980206" green="0.23681987951361738" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCV-06-TLl">
+                                <rect key="frame" x="59" y="112" width="256" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="MES-4n-Tsu"/>
+                                    <constraint firstAttribute="width" constant="256" id="SBG-Hf-Q6q"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="A Silly Song!!">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.16595914884715146" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="35" name="Futura-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.70204952925056641" blue="0.23458877182969862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ItP-1d-6yW" firstAttribute="top" secondItem="gCO-jE-9h0" secondAttribute="bottom" constant="33" id="3O8-0j-KIc"/>
+                            <constraint firstItem="nCV-06-TLl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="92" id="5J6-s1-NTg"/>
+                            <constraint firstItem="gCO-jE-9h0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="34" id="BpJ-gC-8uP"/>
+                            <constraint firstItem="gCO-jE-9h0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Duy-ZW-Mzr"/>
+                            <constraint firstItem="ItP-1d-6yW" firstAttribute="centerX" secondItem="gCO-jE-9h0" secondAttribute="centerX" id="F6h-zS-W3H"/>
+                            <constraint firstItem="ItP-1d-6yW" firstAttribute="centerX" secondItem="gCO-jE-9h0" secondAttribute="centerX" id="Whc-I1-0br"/>
+                            <constraint firstItem="nCV-06-TLl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cp2-Nk-LLi"/>
+                            <constraint firstItem="gCO-jE-9h0" firstAttribute="top" secondItem="nCV-06-TLl" secondAttribute="bottom" constant="33" id="f5D-er-gYG"/>
+                            <constraint firstItem="ItP-1d-6yW" firstAttribute="top" secondItem="gCO-jE-9h0" secondAttribute="bottom" constant="33" id="flg-i2-AAD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gCO-jE-9h0" secondAttribute="trailing" constant="34" id="iRN-h5-pA2"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lyricsView" destination="ItP-1d-6yW" id="PkV-1Q-mYh"/>
+                        <outlet property="nameField" destination="gCO-jE-9h0" id="6U5-od-yOS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
