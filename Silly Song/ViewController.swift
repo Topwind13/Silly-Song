@@ -32,8 +32,11 @@ class ViewController: UIViewController {
             "Banana Fana Fo F<SHORT_NAME>",
             "Me My Mo M<SHORT_NAME>",
             "<FULL_NAME>"].joined(separator: "\n")
-        let fullname = nameField.text?.capitalized
-        lyricsView.text = lyricsForName(lyricsTemplate: bananaFanaTemplate, fullName: fullname!)
+//        let fullname = nameField.text?.capitalized
+        guard let fullname = nameField.text?.capitalized, !fullname.isEmpty else {
+            return
+        }
+        lyricsView.text = lyricsForName(lyricsTemplate: bananaFanaTemplate, fullName: fullname)
     }
 
 }
